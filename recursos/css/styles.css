@@ -1,0 +1,671 @@
+/* ==== Estilos generales ==== */
+
+:root {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--color-gradiente);
+  color: #333;
+    /* variables */
+  --color-gradiente: linear-gradient(1deg,white,green)
+}
+
+a {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+a:hover {
+  color: #005fa3;
+}
+
+h1, h2, h3 {
+  margin: 0.5em 0;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  padding: 8px 12px;
+  background-color: green;
+  color: white;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* ==== Header ==== */
+
+.encabezado {
+  display: flex; /* Habilita Flexbox para organizar los elementos hijos (logo y nav) */
+  justify-content: space-between; /* Coloca el `.logo` a la izquierda y `nav` a la derecha */
+  align-items: center; /* Centra verticalmente el logo y los botones de navegación */
+  gap: 15px;
+  padding: 10px 20px; /* Espaciado interno superior/inferior y lateral */
+  background-color: var(--color-gradiente); /* Fondo para la barra de navegación */
+  border-bottom: 1px solid var(--color-gradiente); /* Un borde sutil en la parte inferior */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Una sombra suave para darle un poco de elevación */
+  height: 60px;
+}
+
+.encabezado .logo h1{
+  color: rgb(255, 255, 255);
+}
+
+.encabezado a img {
+  display: block;
+}
+
+.encabezado nav {
+  flex-grow: 1;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+.encabezado nav a {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.encabezado nav a:hover {
+  color: #125020;
+}
+
+/* ==== Main Content ==== */
+.contenido-principal {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ centrado horizontal */
+  padding-top: 20px;
+}
+.contenido-principal .estilo-filtros h2{
+  color: whitesmoke;
+  text-align: center;
+}
+
+
+/* ==== Menú - Productos ==== */
+
+.menu {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ centra el contenido de cada categoría */
+}
+
+.titulo-seccion {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 30px 0 15px;
+  color: #ffffff;
+  font-weight: bold;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Una sombra suave para darle un poco de elevación */
+  background-color: var(--color-gradiente);
+}
+
+.contenedor-categoria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.producto {
+  display: inline-block;
+  width: 220px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  vertical-align: top;
+  background: #fafafa;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.producto img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.producto h3 {
+  margin: 10px 0 5px;
+}
+
+.producto p {
+  margin: 5px 0 10px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* ==== Popup carrito lateral ==== */
+
+.floating-carrito-btn {
+  position: sticky;
+  top: 20px;
+  right: 20px;
+  z-index: 999; /* encima de todo */
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end; /* ✅ Lo saca del centrado automático de main */
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-size: 1em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.floating-carrito-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+#toggle-carrito {
+  font-size: large;
+}
+
+.carrito-lateral {
+  position: fixed;
+  top: 90px; /* ajustá este valor si querés más separación del header */
+  right: 20px;
+  width: 300px;
+  background: #fff;
+  border-left: 2px solid #28a745;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 15px;
+  max-height: 70vh;
+  overflow-y: auto;
+  z-index: 1100;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.carrito-lateral.fixed-top {
+  top: 0 !important;
+}
+.carrito-hidden {
+  /* transform: translateX(100%); */
+  display: none;
+}
+
+.estilo-encabezadocarrito {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.carrito-lateral h2 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.estilo-mensaje-vacio {
+  display: none;
+}
+
+.lista-carrito {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.lista-carrito li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.lista-carrito img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.lista-carrito .nombre-producto {
+  flex-grow: 1;
+  font-weight: 600;
+}
+
+.lista-carrito .precio-producto {
+  margin-left: 10px;
+  font-weight: 700;
+}
+
+.lista-carrito .btn-eliminar {
+  margin-left: 10px;
+  background-color: #dc3545;
+  padding: 5px 8px;
+  font-size: 0.9em;
+}
+
+.lista-carrito .btn-eliminar:hover {
+  background-color: #b02a37;
+}
+
+#total {
+  font-weight: 700;
+  font-size: 1.1em;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.btn-finalizar-compra {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 0;
+  font-size: 1.1em;
+}
+
+/* ==== Dialogs ==== */
+
+dialog {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  max-width: 400px;
+}
+
+dialog img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+dialog h3 {
+  margin-bottom: 10px;
+}
+
+/* ==== Formulario Reservas y Contacto ==== */
+.pague-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+.pague-container .formulario {
+  margin-bottom: 30px;
+}
+.main-title{
+  color: white;
+}
+
+.pague-container h1 {
+  text-align: center;
+  color: #28a745;
+  margin-bottom: 30px;
+}
+
+form.formulario {
+  width: 100%;
+}
+
+form.formulario label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: white;
+}
+
+form.formulario input,
+form.formulario textarea,
+form.formulario select {
+  font-size: 1em;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+form.formulario textarea {
+  min-height: 120px;
+}
+
+form.formulario button {
+  width: 100%;
+  background-color: #28a745;
+  color: white;
+  padding: 12px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form.formulario button:hover {
+  background-color: #218838;
+}
+
+
+/* --- Estilos para el Main de Finalizar Compra --- */
+.botonvolver-finalizarcompra{
+  text-align: center;
+  margin-top: 20px;
+}
+/* Contenedor principal del contenido */
+.finalizar-container {
+    padding: 25px; 
+    max-width: 600px; 
+    margin: 40px auto; 
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    text-align: center; 
+}
+
+/* Título principal de la página (Finalizar Compra) */
+.finalizar-container .main-title { 
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+/* Subtítulo "Productos en tu carrito" */
+#resumen-carrito h2 {
+    font-size: 1.4em; 
+    color: #555;
+    margin-bottom: 10px;
+    text-align: center; 
+}
+
+/* Estilos para el párrafo "Tu carrito está vacío." */
+.lista-carrito p {
+    font-size: 0.95em;
+    color: #777;
+    margin-bottom: 10px; 
+}
+
+/* Estilos para el total */
+#resumen-carrito p strong {
+    font-size: 1.15em;
+    color: #000;
+    display: block; 
+    margin-top: 10px; 
+    margin-bottom: 5px; 
+}
+
+
+/* Estilos para el formulario */
+.estilo-form-compra {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto; 
+    text-align: left; 
+}
+
+.estilo-form-compra > div {
+    width: 100%; 
+}
+
+.estilo-form-compra label {
+    display: block; 
+    margin-bottom: 2%; 
+    font-weight: bold;
+    color: #444;
+}
+
+.estilo-form-compra input[type="text"],
+.estilo-form-compra select {
+    width: 100%; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95 em;
+    box-sizing: border-box; 
+}
+
+/* Ocultar el div de delivery */
+.hidden {
+    display: none;
+}
+
+/* Botón de Confirmar compra */
+.estilo-form-compra button[type="submit"] {
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 5px; /* Espacio arriba del botón */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto; 
+}
+
+.form-compra button[type="submit"]:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+
+/* Estilos para elementos individuales del carrito si se muestran */
+.carrito-item {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: left; 
+}
+
+.carrito-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.carrito-item .detalle p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #444;
+}
+
+.carrito-item .detalle p strong {
+    font-size: 1.1em;
+    color: #333;
+}
+
+
+
+/* Estilos para el contenedor del logo y el nombre "FrutaBar" */
+.logo {
+    display: flex; /* Habilita Flexbox para alinear la imagen y el h1 */
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+}
+
+.logo img {
+    /* width: 60px; (Ya está definido en tu HTML, puedes dejarlo o controlarlo aquí) */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 15px; /* Espacio entre el logo y el texto "FrutaBar" */
+    border-radius: 40px;
+}
+
+.logo h1 {
+    font-size: 2.2em; /* Tamaño de fuente más grande para "FrutaBar" */
+    color: #000000; /* Un color vibrante para el nombre, ajusta a tu marca */
+    margin: 0; /* Elimina el margen predeterminado de los h1 para una mejor alineación */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Sombra de texto sutil */
+}
+
+/* Estilos para la navegación (botones: Inicio, Reservas, Contacto) */
+nav {
+    display: flex; /* Habilita Flexbox para los enlaces de navegación */
+    gap: 25px; /* Espacio entre cada botón de navegación */
+}
+
+nav a {
+    text-decoration: none; /* Quita el subrayado predeterminado de los enlaces */
+    color: #333; /* Color oscuro para el texto de los botones */
+    font-size: 1.1em; /* Tamaño de fuente para los botones */
+    font-weight: bold; /* Hace el texto un poco más grueso */
+    padding: 10px 20px; /* Espaciado interno para hacer los botones más fáciles de clickear */
+    border: 2px solid #ffffff; /* Un borde con el color de tu marca */
+    border-radius: 25px; /* Bordes más redondeados para un aspecto moderno */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, border-color 0.3s ease; /* Transiciones suaves al interactuar */
+}
+
+nav a:hover {
+    background-color: #ffffff; /* Fondo al pasar el ratón */
+    color: #ffffff; /* Texto blanco al pasar el ratón */
+    transform: translateY(-3px); /* Pequeño efecto de elevación */
+    border-color: #ffffff; /* Cambia el color del borde al pasar el ratón */
+}
+
+/*Pie de pagina*/
+.pie{
+  display: flex; /* Habilita Flexbox para organizar los elementos hijos (logo y nav) */
+  align-items: center; /* Centra verticalmente el logo y los botones de navegación */
+  gap: 15px;
+  padding: 10px 20px; /* Espaciado interno superior/inferior y lateral */
+  background-color: var(--color-gradiente); /* Fondo para la barra de navegación */
+  border-bottom: 1px solid var(--color-gradiente); /* Un borde sutil en la parte inferior */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Una sombra suave para darle un poco de elevación */
+}
+.pie a{
+    font-size: 24px;
+    color: black;
+    text-decoration: none;
+    margin-left: 30px;
+    margin-right: 30px;
+    display: block;   
+}
+/* algunos debugs aplicados para el diseño responsive */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+main {
+  min-height: calc(100vh - 180px); /* 100vh menos la altura aproximada de header + footer */
+}
+
+/* --- Responsive Design (Opcional, pero muy recomendado) --- */
+@media (max-width: 768px) {
+  .encabezado {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto; /* 🔧 que crezca según el contenido */
+    padding: 15px 20px;
+  }
+
+  .logo {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  nav a {
+    padding: 8px 12px;
+    font-size: 1em;
+    white-space: nowrap; /* Evita que se rompa el texto */
+  }
+
+  .logo h1 {
+    font-size: 1.8em;
+  }
+
+  main {
+    margin-top: 20px; /* Espacio extra para evitar que el contenido suba demasiado */
+  }
+}
+@media (max-width: 620px) {
+  .contenedor-categoria {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .producto {
+    max-width: 90%;
+    width: 90%;
+  }
+
+  .menu {
+    padding: 0 10px;
+  }
+
+  .floating-carrito-btn {
+    right: 10px;
+    top: 10px;
+    padding: 10px;
+  }
+
+  .carrito-lateral {
+    width: 90%;
+    right: 0%;
+    max-height: 80vh;
+  }
+    .pie {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .pie a {
+    margin: 10px 0;
+  }
+}
+@media (max-width: 480px) {
+  .encabezado {
+    height: auto; /* ✨ Dejá que el contenido determine la altura */
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 20px;
+  }
+
+  .encabezado nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .encabezado nav a {
+    margin: 5px;
+    padding: 6px 10px;
+    font-size: 0.9em;
+  }
+
+  .logo h1 {
+    font-size: 1.6em;
+  }
+
+  .main-title {
+    margin-top: 20px; /* 🔧 Dejá un margen por si el header ocupa más espacio */
+  }
+}

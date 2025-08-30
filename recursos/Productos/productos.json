@@ -1,0 +1,74 @@
+[
+    {
+      "id": "pizza1",
+      "nombre": "Pizza Aceitunas Negras",
+      "precio": 7700,
+      "imagen": "./recursos/imagenees/carta/pizza1.jpg",
+      "descripcion": "Una pizza clásica con aceitunas negras",
+      "categoria": "pizza"
+    },
+    {
+      "id": "pizza2",
+      "nombre": "Pizza Hojas de Laurel",
+      "precio": 7700,
+      "imagen": "./recursos/imagenees/carta/pizza2.jpg",
+      "descripcion": "Una pizza aromática con hojas de laurel",
+      "categoria": "pizza"
+    },
+    {
+      "id": "pizza3",
+      "nombre": "Pizza Hongos y Pimiento",
+      "precio": 7700,
+      "imagen": "./recursos/imagenees/carta/pizza3.jpg",
+      "descripcion": "Una pizza con sabor intenso a hongos y pimientos",
+      "categoria": "pizza"
+    },
+    {
+      "id": "hambur1",
+      "nombre": "Hamburguesa Simple",
+      "precio": 7700,
+      "imagen": "./recursos/imagenees/carta/hambur1.jpg",
+      "descripcion": "Una hamburguesa clásica con pan artesanal",
+      "categoria": "hambur"
+    },
+    {
+      "id": "hambur2",
+      "nombre": "Hamburguesa Doble",
+      "precio": 7700,
+      "imagen": "./recursos/imagenees/carta/hambur2.jpg",
+      "descripcion": "Doble medallón, doble sabor",
+      "categoria": "hambur"
+    },
+    {
+      "id": "hambur3",
+      "nombre": "Hamburguesa Triple",
+      "precio": 7700,
+      "imagen": "./recursos/imagenees/carta/hambur3.jpg",
+      "descripcion": "La reina de las hamburguesas",
+      "categoria": "hambur"
+    },
+    {
+      "id": "trago1",
+      "nombre": "Juliani Ahumado",
+      "precio": 5700,
+      "imagen": "./recursos/imagenees/carta/trago (1).jpg",
+      "descripcion": "Un aperitivo seco y cítrico",
+      "categoria": "trago"
+    },
+    {
+      "id": "trago2",
+      "nombre": "Gin Tonic",
+      "precio": 4599,
+      "imagen": "./recursos/imagenees/carta/trago (2).jpg",
+      "descripcion": "Un trago refrescante para toda ocasión",
+      "categoria": "trago"
+    },
+    {
+      "id": "trago3",
+      "nombre": "Jarra Moais",
+      "precio": 7500,
+      "imagen": "./recursos/imagenees/carta/trago (3).jpg",
+      "descripcion": "Una experiencia de sabores afrutados",
+      "categoria": "trago"
+    }
+]

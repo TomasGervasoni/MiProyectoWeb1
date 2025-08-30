@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Finalizar Compra - FrutaBar</title>
+  <link rel="stylesheet" href="./recursos/css/styles.css" /> 
+  <script type="module" src="./recursos/js/finalizarcompra.js"></script>
+</head>
+<body>
+  <header class="encabezado">
+    <div class="logo">
+        <img src="./recursos/imagenees/fritabar.jpg" alt="logofruta" width="70">
+        <h1>FrutaBar</h1>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="reservas.html">Reservas</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+    <main class="finalizar-container">
+        <h2 class="main-title">Finalizar Compra</h2>     
+        <section id="resumen-carrito">
+            <h2>Productos en tu carrito</h2>
+            <div class="lista-carrito"></div>
+            <p><strong>Total: $<span id="total"></span></strong></p>
+        </section>
+
+        <form id="form-compra" class="estilo-form-compra">
+            <div>
+                <label for="tipo-envio">Tipo de envío:</label>
+                <select id="tipo-envio" name="tipo-envio" required>
+                    <option value="" disabled selected>-- Selecciona --</option>
+                    <option value="retiro">Retiro en el local</option>
+                    <option value="delivery">Delivery</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="tipo-pago">Forma de pago:</label>
+                <select id="tipo-pago" name="tipo-pago" required>
+                    <option value="" disabled selected>-- Selecciona --</option>
+                    <option value="efectivo">Efectivo</option>
+                    <option value="tarjeta">Tarjeta</option>
+                    <option value="transferencia">Transferencia</option>
+                </select>
+            </div>
+
+            <div>
+            <label for="nombre-receptor">Nombre del receptor:</label>
+            <input type="text" id="nombre-receptor" name="nombre-receptor" required />
+            </div>
+
+            <div id="datos-delivery" class="hidden">
+            <div>
+                <label for="direccion">Dirección de entrega:</label>
+                <input type="text" id="direccion" name="direccion" />
+            </div>
+            </div>
+            <button type="submit">Confirmar compra</button>
+        </form>
+        <div class="botonvolver-finalizarcompra">
+            <button id="btn-volver-menu" type="button">Volver al menú</button>
+        </div>
+    </main>
+    <footer class="pie">
+        <a href="index.html">FrutaBar.com</a>
+        facebook
+        <a href="https://www.facebook.com/FRUTA.Bar.Resto?locale=es_LA">
+            <img src="./recursos/imagenees/logofacebookgris.jpg" 
+                alt="faceboklogo" width="55px">
+        </a>
+        instagram
+        <a href="https://www.instagram.com/frutabar.nvacba/">
+            <img src="./recursos/imagenees/logoinstagramgris.jpg"
+                 alt="logoinstagramgris" width="55px">
+        </a>
+    </footer>
+</body>
+</html>

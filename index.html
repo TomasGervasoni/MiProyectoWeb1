@@ -1,1 +1,68 @@
-<h1>Github Pagues</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrutaBar - Menú</title>
+  <link rel="stylesheet" href="./recursos/css/styles.css">
+  <script type="module" src="./recursos/js/principal.js"></script>
+</head>
+<body>
+  <header class="encabezado">
+    <div class="logo">
+      <img src="./recursos/imagenees/fritabar.jpg" alt="Logo FrutaBar" width="70">
+      <h1>FrutaBar</h1>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="reservas.html">Reservas</a>
+      <a href="contacto.html">Contacto</a>
+    </nav> 
+  </header>
+  <main class="contenido-principal">
+    <button id="toggle-carrito" class="floating-carrito-btn">🛒 Ver Carrito</button>
+      <!-- Carrito lateral -->
+    <aside class="carrito-lateral carrito-hidden">
+      <div class="estilo-encabezadocarrito">
+        <h2>🛒 Carrito</h2>
+        <button id="cerrar-carrito" class="btn-cerrar-carrito">❌</button>
+      </div>
+      <ul class="lista-carrito">
+        <!-- Productos del carrito -->
+      </ul>
+      <p id="total">Total: $0</p>
+      <p id="mensaje-vacio" class="estilo-mensaje-vacio">Tu carrito está vacío.</p> <!-- ✅ NUEVO -->
+      <button class="btn-finalizar-compra">Finalizar compra</button>
+    </aside>
+    <section id="filtros" class="estilo-filtros">
+      <h2>Filtrar por categoría</h2>
+      <button data-categoria="todas">Todas</button>
+      <button data-categoria="pizza">Pizzas</button>
+      <button data-categoria="hambur">Hamburguesas</button>
+      <button data-categoria="trago">Bebidas</button>
+    </section>
+    <section class="menu" id="contenedor-menu">
+      <section id="seccion-pizzas">
+        <h2 class="titulo-seccion">--- PIZZAS ---</h2>
+        <div class="contenedor-categoria" id="contenedor-pizza"></div>
+      </section>
+
+      <section id="seccion-hamburguesas">
+        <h2 class="titulo-seccion">--- HAMBURGUESAS ---</h2>
+        <div class="contenedor-categoria" id="contenedor-hambur"></div>
+      </section>
+
+      <section id="seccion-tragos">
+        <h2 class="titulo-seccion">--- TRAGOS ---</h2>
+        <div class="contenedor-categoria" id="contenedor-trago"></div>
+      </section>
+      <!-- Los artículos se cargarán dinámicamente desde cargamenu.js -->
+    </section>
+  </main>
+  <footer class="pie">
+    <a href="index.html">FrutaBar.com</a>
+    facebook<a href="https://www.facebook.com/FRUTA.Bar.Resto?locale=es_LA"><img src="./recursos/imagenees/logofacebookgris.jpg" alt="faceboklogo" width="55px"></a>
+    instagram<a href="https://www.instagram.com/frutabar.nvacba/"><img src="./recursos/imagenees/logoinstagramgris.jpg" alt="logoinstagramgris" width="55px"></a>
+  </footer>
+</body>
+</html>
